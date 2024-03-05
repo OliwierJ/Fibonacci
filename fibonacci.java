@@ -1,25 +1,33 @@
+// import classes
 import java.math.BigInteger;
 import java.util.*;
 public class fibonacci extends Thread
+// Author:  Oliwier Jakubiec
+// Date: 05/03/2024
+// Purpose:  Fibonacci sequence
 {
-    public static String toTime(int index, double why)
+    // Display time in terms of seconds and minutes
+    public static String toTime(int index, double seconds)
     {
         String myString;
         myString = "";
         if (index >= 60)
             {
-                myString = myString + index / 60 + "m " + why % 60 + " sec";
+                myString = myString + index / 60 + "m " + seconds % 60 + " sec";
             }
         else
             {
-                myString = myString + why + " sec";
+                myString = myString + seconds + " sec";
             }
         return myString;
     }
+    
     public static void main(String[] args) throws InterruptedException
     {
+        // call a new thread
         fibonacci thread = new fibonacci();
         
+        // Initialise variables
         BigInteger a = BigInteger.ONE;
         BigInteger b = BigInteger.ONE;
         BigInteger c = BigInteger.ZERO;    
